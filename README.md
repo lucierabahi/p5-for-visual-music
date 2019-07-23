@@ -5,3 +5,9 @@
 * Choose a folder, for example "visual-theme-1"
 * Open it in a code editor
 * Run the example locally by running a local server
+
+<img width="300" alt="Visual Theme 1" src="https://raw.githubusercontent.com/lucierabahi/p5-for-visual-music/master/reusable-examples/visual-theme-1/theme1.png">
+
+<img width="300" alt="Visual Theme 1" src="https://raw.githubusercontent.com/lucierabahi/p5-for-visual-music/master/reusable-examples/visual-theme-1/theme2.png">
+
+<img width="300" alt="Visual Theme 1" src="https://raw.githubusercontent.com/lucierabahi/p5-for-visual-music/master/reusable-examples/visual-theme-1/theme4.png">

@@ -8,7 +8,8 @@ function setup() {
   background(7,11,21);
 
   canvas = createCanvas(900, 500);
-  song = loadSound('falling.mp3', loaded);
+  song = loadSound('vai-vedrai.mp3', loaded);
+  //song = loadSound('falling.mp3', loaded);
 
   fft = new p5.FFT(0.9, 256); // for the waves
   amplitude = new p5.Amplitude(); // for the ellipses

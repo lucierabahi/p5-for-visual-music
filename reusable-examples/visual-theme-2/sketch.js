@@ -3,7 +3,7 @@ const prevLevels = new Array(60);
 
 function setup() {
   createCanvas(700, 400);
-  song = loadSound("Damage.mp3", loaded);
+  song = loadSound("Curls.mp3", loaded);
   amplitude = new p5.Amplitude;
   fft = new p5.FFT(0.9, 1024);
   fftW = new p5.FFT(0.9, 32);

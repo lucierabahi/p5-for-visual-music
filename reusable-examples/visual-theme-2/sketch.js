@@ -7,8 +7,6 @@ function setup() {
   amplitude = new p5.Amplitude;
   fft = new p5.FFT(0.9, 1024);
   fftW = new p5.FFT(0.9, 32);
-  // noStroke();
-  // rectMode();
 }
 
 function loaded() {
@@ -18,6 +16,7 @@ function loaded() {
   song.setVolume(0.2); // note that all amplitude mappings are between 0 - 0.2 because of this.
 }
 
+// toggle song on button press
 function togglePlaying() {
   if (!song.isPlaying()) {
     song.play();
@@ -76,13 +75,10 @@ function draw() {
   noFill();
   beginShape(QUADS);
 
-    // stroke(255,0,0);
-
-    strokeWeight(3);
+    strokeWeight(1);
     for (let i = 0; i< waveform.length; i++){
       const x = map(i, 0, waveform.length, 0, width);
       const y = map(waveform[i], 0, 0.4, height / 2.1, height);
-      // smooth(0.9);
       vertex(x, y - 10);
       stroke(y, 50, y / 2);
     }
@@ -91,26 +87,15 @@ function draw() {
 
   const spectrum = fft.analyze();
 
-  // const sortedSpectrum = [...spectrum.sort((a,b) => a - b), ...spectrum.reverse().slice(1)]
-
-  // spectrum.sort((a, b) => b - a),
-  //   sortedSpectrum = Array
-  //     .from(spectrum.keys())
-  //     .sort((a, b) => b % 2 - a % 2 || (a % 2 ? b - a : a - b))
-  //     .map(i => spectrum[i]);
-
   const w2 = width / spectrum.length;
   const h2 = (height / 2) / 6;
   noStroke();
-  // console.log(spectrum);
 
   for (let i = 0; i < spectrum.length; i++) {
     const amp = spectrum[i];
     const x = map(i, 0, spectrum.length, 0, width)
     const y = map(amp, 0, 264, height / 2, 0)
     rect(x, y, w2 - 2, h2);
-    // stroke(255);
-    // noFill();
     fill(spectrum[i], 40, 50);
   }
 }

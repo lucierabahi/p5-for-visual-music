@@ -76,9 +76,16 @@ function draw() {
   beginShape(QUADS);
 
     strokeWeight(1);
+
+    // loop over all frequencies
     for (let i = 0; i< waveform.length; i++){
+
+      // map frequency index to rect x position
       const x = map(i, 0, waveform.length, 0, width);
+
+      // map frequency to rect y position
       const y = map(waveform[i], 0, 0.4, height / 2.1, height);
+      
       vertex(x, y - 10);
       stroke(y, 50, y / 2);
     }
@@ -91,10 +98,17 @@ function draw() {
   const h2 = (height / 2) / 6;
   noStroke();
 
+  // loop over all frequencies
   for (let i = 0; i < spectrum.length; i++) {
+
     const amp = spectrum[i];
+
+    // map frequency index to rect x position
     const x = map(i, 0, spectrum.length, 0, width)
+
+    // map frequency to rect y position
     const y = map(amp, 0, 264, height / 2, 0)
+
     rect(x, y, w2 - 2, h2);
     fill(spectrum[i], 40, 50);
   }

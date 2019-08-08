@@ -94,6 +94,10 @@ function draw() {
 
   const spectrum = fft.analyze();
 
+  // remove very high frequencies from the spectrum array 
+  const lastThird = Math.floor((spectrum.length / 3) * 2);
+  spectrum.splice(lastThird);
+
   const w2 = width / spectrum.length;
   const h2 = (height / 2) / 6;
   noStroke();
